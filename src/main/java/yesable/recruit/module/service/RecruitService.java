@@ -1,6 +1,5 @@
 package yesable.recruit.module.service;
 
-import com.example.recruit.*;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
