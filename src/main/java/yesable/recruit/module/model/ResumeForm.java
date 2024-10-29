@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -17,12 +18,14 @@ import java.util.Map;
 @DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "RECRUIT")
+@Document(collection = "RESUME_FORM")
 public class ResumeForm {
+
+    private String recruitId;
 
     // 기업 인재상
     private String goodFit;
 
     // 지원서 문항들 (문항 제목 -> 문항 최대 글자수)
-    private Map<String, Integer> questions;
+    private Map<String, Integer> questions = new HashMap<>();
 }

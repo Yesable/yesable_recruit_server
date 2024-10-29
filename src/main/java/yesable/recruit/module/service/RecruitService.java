@@ -32,7 +32,7 @@ public class RecruitService extends RecruitServiceGrpc.RecruitServiceImplBase {
     public void getRecruitDetail(GetRecruitRequest request, StreamObserver<RecruitResponse> responseObserver) {
         String recruitId = request.getRecruitId();
 
-        Optional<Recruit> recruitOptional = recruitRepository.findById(recruitId);
+        Optional<Recruit> recruitOptional = recruitRepository.findByRecruitId(recruitId);
         if (recruitOptional.isPresent()) {
             RecruitData recruitData = recruitMapper.toDto(recruitOptional.get());
             RecruitResponse response = RecruitResponse.newBuilder()
@@ -69,7 +69,7 @@ public class RecruitService extends RecruitServiceGrpc.RecruitServiceImplBase {
     public void getResumeForm(GetResumeFormRequest request, StreamObserver<ResumeFormResponse> responseObserver) {
         String recruitId = request.getRecruitId();
 
-        Optional<ResumeForm> resumeFormOptional = resumeFormRepository.findById(recruitId);
+        Optional<ResumeForm> resumeFormOptional = resumeFormRepository.findByRecruitId(recruitId);
         if (resumeFormOptional.isPresent()) {
             ResumeFormResponse response = ResumeFormResponse.newBuilder()
                     .setResumeForm(resumeFormMapper.toDto(resumeFormOptional.get()))

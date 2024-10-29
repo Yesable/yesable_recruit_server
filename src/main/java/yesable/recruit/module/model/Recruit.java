@@ -31,10 +31,10 @@ public class Recruit {
     private Integer salary;
 
     // 근무 시작 시간
-    private LocalTime startTime;
+    private String startTime;
 
     // 근무 종료 시간
-    private LocalTime endTime;
+    private String endTime;
 
     // 근무 장소
     private String workPlace;
@@ -70,10 +70,10 @@ public class Recruit {
     private String recruitImageUrl;
 
     // 모집 시작 기간
-    private LocalDate recruitStartDate;
+    private String recruitStartDate;
 
     // 모집 종료 기간
-    private LocalDate recruitEndDate;
+    private String recruitEndDate;
 
     // 제출 서류
     private String submission;
